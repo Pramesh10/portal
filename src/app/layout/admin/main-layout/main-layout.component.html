@@ -1,0 +1,303 @@
+
+<div class="sidebar position-fixed top-0 bottom-0 bg-white border-end" [ngClass]="{'collapsed': isCollapsed}" (mouseleave)="collapseSidebarOnMouseLeave()">
+    <div class="d-flex align-items-center p-3">
+        <a  class="sidebar-logo text-uppercase fw-bold text-decoration-none text-indigo fs-4">AA</a>
+        <i class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block" (click)="toggleSidebar()"></i>
+    </div>
+    <ul class="sidebar-menu p-3 m-0 mb-0">
+        <li class="sidebar-menu-item active" [routerLink]="['/test']" >
+            <a>
+                <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
+                Dashboard
+            </a>
+        </li>
+        <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Custom</li>
+        <li class="sidebar-menu-item has-dropdown" [ngClass]="{'focused': dropdown1.isFocused}">
+            <a  (click)="toggleDropdown(dropdown1)">
+                <i class="ri-pages-line sidebar-menu-item-icon"></i>
+                Pages
+                <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+            </a>
+            <ul class="sidebar-dropdown-menu" *ngIf="dropdown1.isFocused">
+                <li class="sidebar-dropdown-menu-item">
+                    <a [routerLink]="['/user-profile']" >
+                        User Profile
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item has-dropdown" [ngClass]="{'focused': subdropdown1.isFocused}">
+                    <a (click)="toggleSubDropdown(subdropdown1)" >
+                        Blog
+                        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+                    </a>
+                    <ul class="sidebar-dropdown-menu" *ngIf="subdropdown1.isFocused">
+                        <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Home
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Post
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-dropdown-menu-item has-dropdown" [ngClass]="{'focused': subdropdown2.isFocused}">
+                    <a (click)="toggleSubDropdown(subdropdown2)" >
+                        Email Template
+                        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+                    </a>
+                    <ul class="sidebar-dropdown-menu" *ngIf="subdropdown2.isFocused">
+                        <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Reset Password
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Changed Password
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Verify Email
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown-menu-item">
+                            <a >
+                                Invitation
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Pricing
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        About Us
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Contact Us
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Our Team
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidebar-menu-item has-dropdown" [ngClass]="{'focused': dropdown2.isFocused}">
+            <a (click)="toggleDropdown(dropdown2)">
+                <i class="ri-user-line sidebar-menu-item-icon"></i>
+                Authentication
+                <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+            </a>
+            <ul class="sidebar-dropdown-menu" *ngIf="dropdown2.isFocused">
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Login
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Registration
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Reset Password
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Change Password
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Confirm Password
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Deactivate Account
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidebar-menu-item has-dropdown">
+            <a >
+                <i class="ri-window-line sidebar-menu-item-icon"></i>
+                Widgets
+                <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+            </a>
+            <ul class="sidebar-dropdown-menu">
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Charts
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Tables
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Apps</li>
+        <li class="sidebar-menu-item has-dropdown">
+            <a >
+                <i class="ri-shopping-cart-2-line sidebar-menu-item-icon"></i>
+                eCommerce
+                <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+            </a>
+            <ul class="sidebar-dropdown-menu">
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Shop
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Checkout
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Details
+                    </a>
+                </li>
+                <li class="sidebar-dropdown-menu-item">
+                    <a >
+                        Wishlist
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidebar-menu-item">
+            <a >
+                <i class="ri-mail-line sidebar-menu-item-icon"></i>
+                Email
+            </a>
+        </li>
+        <li class="sidebar-menu-item">
+            <a >
+                <i class="ri-calendar-line sidebar-menu-item-icon"></i>
+                Calendar
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="sidebar-overlay" (click)="collapseSidebar()"></div>
+<!-- end: Sidebar -->
+<!-- start: Main -->
+<main class="bg-light">
+  <div class="p-2">
+    <!-- start: Navbar -->
+    <nav class="px-3 py-2 bg-white rounded shadow-sm">
+      <i class="ri-menu-line sidebar-toggle me-3 d-block d-md-none" (click)="toggleSidebar()"></i>
+      <h5 class="fw-bold mb-0 me-auto">Dashboard</h5>
+
+      <div class="dropdown">
+        <div
+          class="d-flex align-items-center cursor-pointer dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <span class="me-2 d-none d-sm-block">Mr. Henry</span>
+          <img
+            class="navbar-profile-image"
+            src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="Image"
+          />
+        </div>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item">Mr. Henry</a></li>
+          <li><a class="dropdown-item">Change Password</a></li>
+          <li><a class="dropdown-item">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- end: Navbar -->
+
+    <!-- start: Content -->
+    <div class="py-2">
+      <!-- start: Summary -->
+      <!-- <div class="row g-3">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <a 
+                        class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-primary">
+                        <div>
+                            <i class="ri-shopping-cart-2-line summary-icon bg-primary mb-2"></i>
+                            <div>Sales</div>
+                        </div>
+                        <h4>$435</h4>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <a 
+                        class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-indigo">
+                        <div>
+                            <i class="ri-shopping-cart-2-line summary-icon bg-indigo mb-2"></i>
+                            <div>Sales</div>
+                        </div>
+                        <h4>$435</h4>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <a 
+                        class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-success">
+                        <div>
+                            <i class="ri-shopping-cart-2-line summary-icon bg-success mb-2"></i>
+                            <div>Sales</div>
+                        </div>
+                        <h4>$435</h4>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <a 
+                        class="text-dark text-decoration-none bg-white p-3 rounded shadow-sm d-flex justify-content-between summary-danger">
+                        <div>
+                            <i class="ri-shopping-cart-2-line summary-icon bg-danger mb-2"></i>
+                            <div>Sales</div>
+                        </div>
+                        <h4>$435</h4>
+                    </a>
+                </div>
+            </div> -->
+      <!-- end: Summary -->
+      <!-- start: Graph -->
+      <!-- <div class="row g-3 mt-2">
+                <div class="col-12 col-md-7 col-xl-8">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-white">
+                            Sales
+                        </div>
+                        <div class="card-body">
+                            <canvas id="sales-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 col-xl-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-white">
+                            Visitors
+                        </div>
+                        <div class="card-body">
+                            <canvas id="visitors-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+      <!-- end: Graph -->
+      <router-outlet></router-outlet>
+    </div>
+    <!-- end: Content -->
+  </div>
+</main>

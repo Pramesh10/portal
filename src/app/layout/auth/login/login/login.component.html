@@ -1,0 +1,129 @@
+<div class="area">
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <div class="container">
+    <div class="screen">
+      <div class="screen__content">
+        <form
+          class="login"
+          name="form"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate
+        >
+          <div class="login__field">
+            <i class="login__icon ri-user-fill"></i>
+            <input
+              type="text"
+              class="login__input"
+              placeholder="User name / Email"
+              [(ngModel)]="form.username"
+              required
+              #username="ngModel"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+          <div class="login__field" style="margin-top: -30px;">
+            <i class="login__icon ri-lock-fill"></i>
+            <input
+              type="password"
+              class="login__input"
+              placeholder="Password"
+              [(ngModel)]="form.password"
+              required
+              minlength="6"
+              #password="ngModel"
+              [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="button login__submit">
+                <span class="button__text">Log In Now</span>
+                <i class="button__icon ri-arrow-right-line"></i>
+              </button>
+            </div>
+            <div class="col">
+              <p class="message">Welcome back! Log in to your account.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="screen__background">
+        <span class="screen__background__shape screen__background__shape4"></span>
+        <span class="screen__background__shape screen__background__shape3"></span>
+        <span class="screen__background__shape screen__background__shape2"></span>
+        <span class="screen__background__shape screen__background__shape1"></span>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<!-- <div class="container">
+  <div class="screen">
+    <div class="screen__content">
+      <form
+        class="login"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="login__field">
+          <i class="login__icon ri-user-fill"></i>
+          <input
+            type="text"
+            class="login__input"
+            placeholder="User name / Email"
+            [(ngModel)]="form.username"
+            required
+            #username="ngModel"
+            [ngModelOptions]="{standalone: true}"
+          />
+        </div>
+        <div class="login__field">
+          <i class="login__icon ri-lock-fill"></i>
+          <input
+            type="password"
+            class="login__input"
+            placeholder="Password"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            #password="ngModel"
+            [ngModelOptions]="{standalone: true}"
+          />
+        </div>
+        <div class="row">
+          <div class="col">
+            <button class="button login__submit">
+              <span class="button__text">Log In Now</span>
+              <i class="button__icon ri-arrow-right-line"></i>
+            </button>
+          </div>
+          <div class="col">
+            <p class="message">Welcome back! Log in to your account.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="screen__background">
+      <span class="screen__background__shape screen__background__shape4"></span>
+      <span class="screen__background__shape screen__background__shape3"></span>
+      <span class="screen__background__shape screen__background__shape2"></span>
+      <span class="screen__background__shape screen__background__shape1"></span>
+    </div>
+  </div>
+</div> -->
