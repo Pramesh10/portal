@@ -7,39 +7,36 @@ import { UserProfileComponent } from '../../../pages/user-profile/user-profile.c
 
 // const routes: Routes = [
 //   {
-//     path: "login", component: LoginComponent, 
+//     path: "login", component: LoginComponent,
 //   },
 //   {
-//     path: "test", component: TestListComponent, 
+//     path: "test", component: TestListComponent,
 //   }
 // ];
 const routes: Routes = [
-	{
-		path: "",
-		component: MainLayoutComponent,
-		children:[
-			{
-				path: "",
-				redirectTo: "/test",
-				pathMatch: "full"
-			},
-			{
-				path: "test",
-				component: TestListComponent
-			},
+  {
+    path: '',
+    component: MainLayoutComponent,
+    children: [
       {
-        path: "user-profile",
-        component : UserProfileComponent
-      }
-		
-		]
-	},
+        path: '',
+        redirectTo: '/test',
+        pathMatch: 'full',
+      },
+      {
+        path: 'test',
+        component: TestListComponent,
+      },
+      {
+        path: 'user-profile',
+        component: UserProfileComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MainLayoutRoutingModule {
-
- }
+export class MainLayoutRoutingModule {}

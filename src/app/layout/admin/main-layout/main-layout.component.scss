@@ -1,3 +1,4 @@
+$company-color: #1c4059;
 .text-indigo:hover,
 .text-indigo {
     color: var(--bs-indigo);
@@ -85,7 +86,7 @@
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: var(--bs-dark);
+    color: whitesmoke;
     padding: .375rem .75rem;
     border-radius: .375rem;
     font-size: .875rem;
@@ -97,11 +98,19 @@
 .sidebar-menu-item.focused > a,
 .sidebar-menu-item > a:hover {
     background-color: var(--bs-gray-200);
+    color: $company-color;
+    i{
+        color: $company-color;
+    }
 }
 .sidebar-menu-item.active a {
-    background-color: var(--bs-indigo);
-    color: var(--bs-light);
+    background-color: whitesmoke;
+    color: $company-color;
     box-shadow: 0 .25rem .25rem rgba(0, 0, 0, 0.175);
+
+    i{
+        color:$company-color;
+    }
 }
 .sidebar-menu-item-icon {
     margin-right: .625rem;
@@ -128,7 +137,7 @@
 }
 .sidebar-dropdown-menu-item.focused > a,
 .sidebar-dropdown-menu-item a:hover {
-    color: var(--bs-indigo);
+    color: rgb(248, 248, 248);
 }
 .sidebar-dropdown-menu {
     padding-left: 2rem;
@@ -136,6 +145,22 @@
 .sidebar-dropdown-menu .sidebar-dropdown-menu {
     padding-left: 1rem;
     list-style-type: circle;
+}
+
+.nav-side-bg{
+    background-color: $company-color;
+    color: whitesmoke;
+}
+
+i{
+    color: whitesmoke;
+}
+
+ul{
+    list-style : disc;
+}
+ul :hover{
+  cursor: pointer;
 }
 /* end: Sidebar */
 
@@ -146,7 +171,14 @@ main {
     padding-left: 0;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
+    background-color:  #5e5f5d40 ;
 }
+
+content-main{
+
+}
+
+
 
 
 
@@ -154,6 +186,11 @@ main {
 nav {
     display: flex;
     align-items: center;
+    position: fixed;
+    top: auto;
+    width: -webkit-fill-available;
+    margin-right: 10px;
+    z-index: 1;
 }
 .navbar-profile-image {
     width: 2.5rem;
@@ -171,6 +208,9 @@ nav {
 }
 .navbar-link:hover {
     background-color: var(--bs-gray-200);
+}
+.user-dropdown-list{
+    list-style: none;
 }
 /* end: Navbar */
 
@@ -232,6 +272,9 @@ nav {
 /* end: Suummary */
 /* end: Main */
 
+.router-content{
+    margin-top: 60px;
+}
 
 
 /* start: Breakpoints */

@@ -18,7 +18,7 @@
         <form
           class="login"
           name="form"
-          (ngSubmit)="f.form.valid && onSubmit()"
+          (ngSubmit)="f.form.valid && loginWithBiometrics()"
           #f="ngForm"
           novalidate
         >

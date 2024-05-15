@@ -1,7 +1,7 @@
 
-<div class="sidebar position-fixed top-0 bottom-0 bg-white border-end" [ngClass]="{'collapsed': isCollapsed}" (mouseleave)="collapseSidebarOnMouseLeave()">
+<div class="sidebar position-fixed top-0 bottom-0 nav-side-bg border-end" [ngClass]="{'collapsed': isCollapsed}" (mouseleave)="collapseSidebarOnMouseLeave()">
     <div class="d-flex align-items-center p-3">
-        <a  class="sidebar-logo text-uppercase fw-bold text-decoration-none text-indigo fs-4">AA</a>
+        <a  class="sidebar-logo text-uppercase fw-bold text-decoration-none text-white fs-4">Company</a>
         <i class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block" (click)="toggleSidebar()"></i>
     </div>
     <ul class="sidebar-menu p-3 m-0 mb-0">
@@ -11,7 +11,7 @@
                 Dashboard
             </a>
         </li>
-        <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Custom</li>
+        <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase text-white">Custom</li>
         <li class="sidebar-menu-item has-dropdown" [ngClass]="{'focused': dropdown1.isFocused}">
             <a  (click)="toggleDropdown(dropdown1)">
                 <i class="ri-pages-line sidebar-menu-item-icon"></i>
@@ -150,7 +150,7 @@
                 </li>
             </ul>
         </li>
-        <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Apps</li>
+        <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase text-white">Apps</li>
         <li class="sidebar-menu-item has-dropdown">
             <a >
                 <i class="ri-shopping-cart-2-line sidebar-menu-item-icon"></i>
@@ -197,10 +197,10 @@
 <div class="sidebar-overlay" (click)="collapseSidebar()"></div>
 <!-- end: Sidebar -->
 <!-- start: Main -->
-<main class="bg-light">
+<main class="content-main">
   <div class="p-2">
     <!-- start: Navbar -->
-    <nav class="px-3 py-2 bg-white rounded shadow-sm">
+    <nav class="px-3 py-2 nav-side-bg rounded shadow-sm">
       <i class="ri-menu-line sidebar-toggle me-3 d-block d-md-none" (click)="toggleSidebar()"></i>
       <h5 class="fw-bold mb-0 me-auto">Dashboard</h5>
 
@@ -210,15 +210,15 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          <span class="me-2 d-none d-sm-block">Mr. Henry</span>
+          <span class="me-2 d-none d-sm-block">Pramesh K.C.</span>
           <img
             class="navbar-profile-image"
             src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
             alt="Image"
           />
         </div>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item">Mr. Henry</a></li>
+        <ul class="dropdown-menu user-dropdown-list" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item">Hello Username</a></li>
           <li><a class="dropdown-item">Change Password</a></li>
           <li><a class="dropdown-item">Logout</a></li>
         </ul>
@@ -227,7 +227,7 @@
     <!-- end: Navbar -->
 
     <!-- start: Content -->
-    <div class="py-2">
+    <div class="py-2 router-content">
       <!-- start: Summary -->
       <!-- <div class="row g-3">
                 <div class="col-12 col-sm-6 col-lg-3">

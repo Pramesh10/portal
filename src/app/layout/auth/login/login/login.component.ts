@@ -15,6 +15,7 @@ import { UserloginService } from '../../auth-services/userlogin.service';
   imports: [FormsModule, ReactiveFormsModule, RouterLink, RouterLinkActive],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
+  providers : [UserloginService]
 })
 export class LoginComponent implements OnInit {
   form: any = {
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
    *
    */
   router = inject(Router);
+  userLoginServices = inject(UserloginService);
 
  
 
@@ -40,7 +42,18 @@ export class LoginComponent implements OnInit {
     console.log(this.form);
     console.log('loginclicked');
 
-    this.router.navigateByUrl('/test');
     
+    this.router.navigateByUrl('/test');
+
+
+    
+  }
+
+  loginWithBiometrics() {
+    this.router.navigateByUrl('/test');
+
+    console.log("loginwithBiometrics");
+    // this.userLoginServices.performBiometricVerificatin();
+      
   }
 }
