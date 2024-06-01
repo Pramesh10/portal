@@ -1,0 +1,98 @@
+.list-group-item {
+  background-color: rgb(255, 255, 255);
+  border: none;
+}
+
+.billing-top-details .list-group-item {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.payment-btn {
+  background-color: #1c4059;
+  color: white;
+}
+
+.f-left {
+  float: left;
+  color: white;
+  font-size: larger;
+}
+
+.f-right {
+  float: right;
+}
+
+.billing-details-list {
+  padding: 5px;
+  font-size: 12px;
+}
+
+/* Payments */
+.payment-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%;
+  padding: 20px 20px 10px 20px; /* Ensure it takes full width */
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  border: 0.5px solid rgb(214 214 214);
+}
+
+.payment-card img {
+  max-width: 100%;
+  height: 55px;
+  mix-blend-mode: multiply;
+}
+.payment-mode-account-card {
+  height: 210px;
+  overflow-y: scroll;
+  padding: 8px;
+}
+.payment-mode-account {
+  margin-bottom: 0;
+}
+
+.paymentMode-line {
+  background-color: #eceff1;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.2rem;
+  color: #1c4059;
+  font-weight: bold;
+}
+
+.payment-card-box {
+  transition: transform 0.3s ease; /* Adjust the duration and timing function as needed */
+}
+
+.payment-card-box:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.short-cut-text {
+  margin: 0;
+  font-size: small;
+  font-weight: 300;
+}
+
+.qr-code {
+  background-color: #ffffff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.2rem;
+  color: #1c4059;
+  font-weight: bold;
+  height: calc(100vh - 105px);
+}

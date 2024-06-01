@@ -1,48 +1,76 @@
-
-<div class="sidebar position-fixed top-0 bottom-0 nav-side-bg border-end" [ngClass]="{'collapsed': isCollapsed}" (mouseleave)="collapseSidebarOnMouseLeave()">
-    <div class="d-flex align-items-center p-3">
-        <a  class="sidebar-logo text-uppercase fw-bold text-decoration-none text-white fs-4">Company</a>
-        <i class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block" (click)="toggleSidebar()"></i>
-    </div>
-    <ul class="sidebar-menu p-3 m-0 mb-0">
-        <li class="sidebar-menu-item active" [routerLink]="['/test']" >
-            <a>
-                <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
-                Dashboard
-            </a>
+<div
+  class="sidebar position-fixed top-0 bottom-0 nav-side-bg border-end"
+  [ngClass]="{ collapsed: isCollapsed }"
+  (mouseleave)="collapseSidebarOnMouseLeave()"
+>
+  <div class="d-flex align-items-center p-3">
+    <a
+      class="sidebar-logo text-uppercase fw-bold text-decoration-none text-white fs-4"
+      >Company</a
+    >
+    <i
+      class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block"
+      (click)="toggleSidebar()"
+    ></i>
+  </div>
+  <ul class="sidebar-menu p-3 m-0 mb-0">
+    <li class="sidebar-menu-item active" [routerLink]="['/dashboard']">
+      <a>
+        <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
+        Dashboard
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-item active" [routerLink]="['/calendar']">
+      <a>
+        <i class="ri-calendar-line sidebar-menu-item-icon"></i>
+        Calendar
+      </a>
+    </li>
+    <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase text-white">
+      Custom
+    </li>
+    <li
+      class="sidebar-menu-item has-dropdown"
+      [ngClass]="{ focused: dropdown1.isFocused }"
+    >
+      <a (click)="toggleDropdown(dropdown1)">
+        <i class="ri-pages-line sidebar-menu-item-icon"></i>
+        Pages
+        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+      </a>
+      <ul class="sidebar-dropdown-menu" *ngIf="dropdown1.isFocused">
+        <li class="sidebar-dropdown-menu-item">
+          <a [routerLink]="['/user-profile']"> User Profile </a>
         </li>
-        <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase text-white">Custom</li>
-        <li class="sidebar-menu-item has-dropdown" [ngClass]="{'focused': dropdown1.isFocused}">
-            <a  (click)="toggleDropdown(dropdown1)">
-                <i class="ri-pages-line sidebar-menu-item-icon"></i>
-                Pages
-                <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
-            </a>
-            <ul class="sidebar-dropdown-menu" *ngIf="dropdown1.isFocused">
-                <li class="sidebar-dropdown-menu-item">
-                    <a [routerLink]="['/user-profile']" >
-                        User Profile
-                    </a>
-                </li>
-                <li class="sidebar-dropdown-menu-item has-dropdown" [ngClass]="{'focused': subdropdown1.isFocused}">
-                    <a (click)="toggleSubDropdown(subdropdown1)" >
-                        Blog
-                        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
-                    </a>
-                    <ul class="sidebar-dropdown-menu" *ngIf="subdropdown1.isFocused">
-                        <li class="sidebar-dropdown-menu-item">
-                            <a >
-                                Home
-                            </a>
-                        </li>
-                        <li class="sidebar-dropdown-menu-item">
+        <li class="sidebar-dropdown-menu-item">
+          <a [routerLink]="['/salesinvoice/sales']"> Sales Invoice (F1) </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a [routerLink]="['/salesinvoice/tax']"> Tax Invoice (F2) </a>
+        </li>
+        <li
+          class="sidebar-dropdown-menu-item has-dropdown"
+          [ngClass]="{ focused: subdropdown1.isFocused }"
+        >
+          <a (click)="toggleSubDropdown(subdropdown1)">
+            PrimeNg Table
+            <i
+              class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"
+            ></i>
+          </a>
+          <ul class="sidebar-dropdown-menu" *ngIf="subdropdown1.isFocused">
+            <li class="sidebar-dropdown-menu-item">
+              <a [routerLink]="['/primengtable']"> Tables </a>
+            </li>
+            <!-- <li class="sidebar-dropdown-menu-item">
                             <a >
                                 Post
                             </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-dropdown-menu-item has-dropdown" [ngClass]="{'focused': subdropdown2.isFocused}">
+                        </li> -->
+          </ul>
+        </li>
+        <!-- <li class="sidebar-dropdown-menu-item has-dropdown" [ngClass]="{'focused': subdropdown2.isFocused}">
                     <a (click)="toggleSubDropdown(subdropdown2)" >
                         Email Template
                         <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
@@ -89,10 +117,10 @@
                     <a >
                         Our Team
                     </a>
-                </li>
-            </ul>
-        </li>
-        <li class="sidebar-menu-item has-dropdown" [ngClass]="{'focused': dropdown2.isFocused}">
+                </li> -->
+      </ul>
+    </li>
+    <!-- <li class="sidebar-menu-item has-dropdown" [ngClass]="{'focused': dropdown2.isFocused}">
             <a (click)="toggleDropdown(dropdown2)">
                 <i class="ri-user-line sidebar-menu-item-icon"></i>
                 Authentication
@@ -130,8 +158,8 @@
                     </a>
                 </li>
             </ul>
-        </li>
-        <li class="sidebar-menu-item has-dropdown">
+        </li> -->
+    <!-- <li class="sidebar-menu-item has-dropdown">
             <a >
                 <i class="ri-window-line sidebar-menu-item-icon"></i>
                 Widgets
@@ -149,9 +177,11 @@
                     </a>
                 </li>
             </ul>
-        </li>
-        <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase text-white">Apps</li>
-        <li class="sidebar-menu-item has-dropdown">
+        </li> -->
+    <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase text-white">
+      Apps
+    </li>
+    <!-- <li class="sidebar-menu-item has-dropdown">
             <a >
                 <i class="ri-shopping-cart-2-line sidebar-menu-item-icon"></i>
                 eCommerce
@@ -179,8 +209,8 @@
                     </a>
                 </li>
             </ul>
-        </li>
-        <li class="sidebar-menu-item">
+        </li> -->
+    <!-- <li class="sidebar-menu-item">
             <a >
                 <i class="ri-mail-line sidebar-menu-item-icon"></i>
                 Email
@@ -191,17 +221,26 @@
                 <i class="ri-calendar-line sidebar-menu-item-icon"></i>
                 Calendar
             </a>
-        </li>
-    </ul>
+        </li> -->
+  </ul>
 </div>
 <div class="sidebar-overlay" (click)="collapseSidebar()"></div>
 <!-- end: Sidebar -->
+<!-- end: Sidebar -->
+<!-- end: Sidebar -->
+<!-- end: Sidebar -->
+<!-- start: Main -->
+<!-- start: Main -->
+<!-- start: Main -->
 <!-- start: Main -->
 <main class="content-main">
   <div class="p-2">
     <!-- start: Navbar -->
     <nav class="px-3 py-2 nav-side-bg rounded shadow-sm">
-      <i class="ri-menu-line sidebar-toggle me-3 d-block d-md-none" (click)="toggleSidebar()"></i>
+      <i
+        class="ri-menu-line sidebar-toggle me-3 d-block d-md-none"
+        (click)="toggleSidebar()"
+      ></i>
       <h5 class="fw-bold mb-0 me-auto">Dashboard</h5>
 
       <div class="dropdown">
@@ -217,7 +256,10 @@
             alt="Image"
           />
         </div>
-        <ul class="dropdown-menu user-dropdown-list" aria-labelledby="dropdownMenuButton1">
+        <ul
+          class="dropdown-menu user-dropdown-list"
+          aria-labelledby="dropdownMenuButton1"
+        >
           <li><a class="dropdown-item">Hello Username</a></li>
           <li><a class="dropdown-item">Change Password</a></li>
           <li><a class="dropdown-item">Logout</a></li>
@@ -301,3 +343,5 @@
     <!-- end: Content -->
   </div>
 </main>
+
+

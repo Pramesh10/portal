@@ -1,0 +1,20 @@
+$company-color: #1c4059;
+
+.floating-button {
+    position: fixed;
+    top: 80px;
+    right: 0px;
+    padding: 10px 20px;
+    background-color: $company-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 1005;
+}
+
+.floating-button:hover {
+    background-color: #0056b3;
+}

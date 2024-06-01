@@ -1,0 +1,24 @@
+@import "assets/scss/custom.scss";
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+.fc .fc-scroller-harness {
+  position: sticky;
+  z-index: 0;
+}
+.fc .fc-button-group > .fc-button.fc-button-active,
+.fc .fc-button-group > .fc-button:active,
+.fc .fc-button-group > .fc-button:focus,
+.fc .fc-button-group > .fc-button:hover {
+  z-index: 0;
+}
+
+$company-color: #1c4059;
+.fc-scrollgrid-sync-inner a {
+ 
+  color: $company-color;
+}
+
+

@@ -1,0 +1,115 @@
+
+<div class="container-fluid">
+    <div class="text-center">
+        <p>USER'S LIST</p>
+    </div>
+</div><div class="card">
+  <p-table
+    #dt1
+    [columns]="cols"
+    [resizableColumns]="true"
+    styleClass="p-datatable-gridlines"
+    [value]="users"
+    dataKey="id"
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 20,50]"
+    [loading]="loading"
+    [paginator]="true"
+    [scrollable]="true"
+    scrollHeight="350px"
+    selectionMode="multiple"
+    [(selection)]="users"
+    [exportHeader]="'customExportHeader'"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [globalFilterFields]="['name', 'age', 'birthday', 'location']"
+  >
+    <ng-template pTemplate="caption">
+      <div class="flex fs-6">
+        <p-button
+          class="m-2"
+          label="Clear"
+          [outlined]="true"
+          icon="pi pi-filter-slash"
+          (click)="clear(dt1)"
+        />
+        <span class="p-input-icon-left ml-1">
+          <i class="pi pi-search"></i>
+          <input
+            pInputText
+            type="text"
+            (input)="dt1.filterGlobal($any($event.target).value, 'contains')"
+            placeholder="Global Search"
+          />
+          <!-- <input pInputText type="text" (input)="applyFilterGlobal($event, 'contains')" placeholder="Filter" /> -->
+          
+        </span>
+        <p-button
+            icon="pi pi-external-link"
+            label="Export"
+            (click)="dt1.exportCSV()"
+          />
+      </div>
+      <div style="text-align: left"></div>
+    </ng-template>
+    <ng-template pTemplate="header" class="header-table-custom">
+      <tr>
+        <th style="min-width: 15rem">
+          <div class="flex align-items-center">
+            Name
+            <p-columnFilter type="text" field="name" display="menu" />
+          </div>
+        </th>
+        <th pSortableColumn="age" style="min-width: 15rem">
+          <div class="flex align-items-center">
+            Age
+            <p-sortIcon field="code" />
+            <p-columnFilter type="numeric" field="age" display="menu" />
+          </div>
+        </th>
+
+        <th style="min-width: 10rem">
+          <div class="flex align-items-center">
+            Birthday
+            <p-columnFilter type="date" field="birthday" display="menu" />
+          </div>
+        </th>
+        <th style="min-width: 10rem">
+          <div class="flex align-items-center">
+            Location
+            <p-columnFilter
+              type="text"
+              field="location"
+              display="menu"
+              
+            />
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>
+          {{ user.name }}
+        </td>
+        <td>
+          {{ user.age }}
+        </td>
+        <td>
+          {{ user.birthday | date : "MM/dd/yyyy" }}
+        </td>
+
+        <td>
+          {{ user.location }}
+        </td>
+      </tr>
+    </ng-template>
+    @if(noUser){
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="7">No customers found.</td>
+      </tr>
+    </ng-template>
+    }
+  </p-table>
+</div>

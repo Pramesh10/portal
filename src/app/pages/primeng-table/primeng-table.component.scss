@@ -1,0 +1,38 @@
+:host ::ng-deep {
+  .p-progressbar {
+    height: 0.5rem;
+    background-color: #557ca3;
+
+    .p-progressbar-value {
+      background-color: #607d8b;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .dateTimeField {
+    width: 50% !important;
+  }
+}
+
+tr {
+  border-bottom: 0.25px solid black;
+  color: rgb(1, 0, 0);
+}
+
+
+
+::ng-deep .p-column-filter-overlay{
+    font-size: x-small;
+}
+
+::ng-deep .p-column-filter-overlay{
+    font-size: x-small;
+}
+
+::ng-deep .p-component {
+    font-family: var(--font-family);
+    font-feature-settings: var(--font-feature-settings, normal);
+     font-size: smaller; 
+     font-weight: normal; 
+}

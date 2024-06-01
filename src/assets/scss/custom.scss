@@ -1,0 +1,51 @@
+.nav-borders .nav-link.highlight {
+  color: #1c4059;
+  font-weight: 900;
+  border-bottom-color: #1c4059;
+}
+
+.nav-borders .nav-link {
+  color: #69707a;
+  font-size: small;
+  border-bottom-width: 0.125rem;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  transition: color 0.3s, border-bottom-color 0.5s;
+  cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 415px) {
+  .nav-borders .nav-link {
+    font-size: x-small;
+  }
+}
+
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 6px;  /* Adjust the width as needed */
+}
+
+/* Background of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;  /* Track color */
+}
+
+/* Handle of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #446176;  /* Handle color */
+  border-radius: 20px;  /* Rounded corners for the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;  /* Handle color on hover */
+}

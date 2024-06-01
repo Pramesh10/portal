@@ -1,0 +1,163 @@
+<div class="container-fluid main-content rounded shadow-sm p-2">
+  <div class="row">
+    <div class="col-sm-12 col-lg-4 col-xl-3 col-md-4">
+      <label for="">Invoice Number</label>
+      <input
+        type="text"
+        name=""
+        id=""
+        class="form-control"
+        placeholder="SI-000001"
+        disabled
+      />
+    </div>
+
+    <div class="col-sm-12 col-lg-4 col-xl-3 col-md-4">
+      <label for="">Date</label>
+      <input
+        type="text"
+        name=""
+        placeholder="Date"
+        class="form-control"
+        id=""
+        disabled
+      />
+    </div>
+    <div class="col-sm-12 col-lg-4 col-xl-3 col-md-4">
+      <label for="">BS</label>
+      <input
+        type="text"
+        name=""
+        class="form-control"
+        id=""
+        placeholder="Date"
+        disabled
+      />
+    </div>
+    <div class="col-sm-12 col-lg-4 col-xl-3 col-md-4">
+      <label for="">Bill To:</label>
+      <input
+        type="text"
+        name=""
+        class="form-control"
+        id=""
+        placeholder="Bill TO"
+        disabled
+      />
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid main-content rounded shadow-sm p-2">
+  <div class="form-row">
+    <input
+      type="text"
+      name=""
+      placeholder="Enter Bar Code"
+      class="form-control barcode-input"
+      id=""
+      #barcodeInput
+      (keyup.enter)="onEnter(barcodeInput.value, barcodeInput)"
+    />
+  </div>
+  @if(emptyBarCode){
+  <div class="class empty-barcode-warning">
+    <p>Please Enter Valid Item Code</p>
+  </div>
+  }
+  <hr class="mt-3 mb-2" />
+  <div class="table-responsive itemLine-table">
+    <table class="table table-hover">
+      <thead>
+        <tr class="text-left">
+          <th>#</th>
+          <th>Code</th>
+          <th>Name</th>
+          <th>UOM</th>
+          <th>Rate</th>
+          <th>Qty</th>
+          <th>Gr AMT</th>
+          <th>Disc</th>
+          <th>Disc %</th>
+          <th>Net Amount</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr *ngFor="let line of itemsLine.slice().reverse(); let i = index"> -->
+        <tr
+          *ngFor="let line of itemsLine; let i = index"
+          [ngClass]="{ 'top-row-items': i === 0 }"
+        >
+          <td>{{ itemsLine.length - i }}</td>
+          <!-- <td>{{ i  }}</td> -->
+          <td>{{ line.barCode }}</td>
+          <td>{{ line.itemName }}</td>
+          <td>{{ line.uom }}</td>
+          <td>{{ line.rate }}</td>
+          <td>
+            <input
+              type="number"
+              [(ngModel)]="line.quantity"
+              (ngModelChange)="quantityChange(line)"
+            />
+          </td>
+          <td>{{ line.grossAmount }}</td>
+          <td>
+            <input type="number" [(ngModel)]="line.discount" />
+          </td>
+          <td>
+            <input type="number" [(ngModel)]="line.discountPercentage" />
+          </td>
+          <td>
+            <input type="number" disabled [(ngModel)]="line.netAmount" />
+          </td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteItem(i)">
+              X
+            </button>
+            <!-- <button
+              class="btn btn-danger btn-sm"
+              (click)="deleteItem(itemsLine.length - 1 - i)"
+            >
+              X
+            </button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Total :</td>
+          <td>
+            {{ totalQuantity }}
+          </td>
+          <td>{{ totalGrossAmount }}</td>
+          <td>{{ totalDiscount }}</td>
+          <td></td>
+          <td>
+            {{ totalNetAmount }}
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="class next-button-sectioon">
+    <button
+      class="btn btn-primary btn-next-to-billing"
+      [disabled]="isLoading"
+      (click)="billing()"
+    >
+      {{ isLoading ? "Please wait..." : "Next" }}
+    </button>
+  </div>
+</div>

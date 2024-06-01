@@ -1,0 +1,356 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-12 mb-3 mt-2">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="payment-card">
+            <div class="row">
+              <div class="col-sm-6">
+                <img
+                  cImg
+                  fluid
+                  height="50px"
+                  src="assets/images/companylogo.jpg"
+                />
+              </div>
+              <div class="col-sm-6 text-right">
+                <small> <strong>Fonepay</strong> F10 </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="payment-card">
+            <div class="row">
+              <div class="col-sm-6">
+                <img
+                  cImg
+                  fluid
+                  src="assets/images/fonepay.png"
+                />
+              </div>
+              <div class="col-sm-6 text-right">
+                <small> <strong>Fonepay</strong> F10 </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="payment-card">
+            <div class="row">
+              <div class="col-sm-6">
+                <img
+                  cImg
+                  fluid
+                  height="50px"
+                  src="assets/images/companylogo.jpg"
+                />
+              </div>
+              <div class="col-sm-6 text-right">
+                <small> <strong>Fonepay</strong> F10 </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="payment-card">
+            <div class="row">
+              <div class="col-sm-6">
+                <img
+                  cImg
+                  fluid
+                  height="50px"
+                  src="assets/images/companylogo.jpg"
+                />
+              </div>
+              <div class="col-sm-6 text-right">
+                <small> <strong>Fonepay</strong> F10 </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="payment-card">
+            <div class="row">
+              <div class="col-sm-6">
+                <img
+                  cImg
+                  fluid
+                  height="60px"
+                  src="assets/images/companylogo.jpg"
+                />
+              </div>
+              <div class="col-sm-6 text-right payment-name">
+                <small> <strong>Fonepay</strong> F10 </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3 billing-details">
+      <div class="card rounded text-center billing-top-details mt-2">
+        <ul class="list-group list-group-flush billing-details-list">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <p class="mb-0 text-secondary">BILL NO</p>
+            <span class="text-secondary"> SI-PKC-0000001</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <p class="mb-0 text-secondary">BILL Date</p>
+            <span class="text-secondary"> 2024-05-30</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <p class="mb-0 text-secondary">BILL TO</p>
+            <span class="text-secondary"> PRAMESH</span>
+          </li>
+        </ul>
+      </div>
+      <div class="card mt-1">
+        <ul class="list-group list-group-flush">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <h6 class="mb-0 text-info">NET AMOUNT</h6>
+            <span class="text-info">RS.20</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <h6 class="mb-0 text-primary">GROSS AMOUNT</h6>
+            <span class="text-primary">RS.20</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <h6 class="mb-0 text-success">TOTAL AMOUNT</h6>
+            <span class="text-success">RS.20</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <h6 class="mb-0 text-danger">CHANGE AMOUNT</h6>
+            <span class="text-danger">RS.20</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <h6 class="mb-0">PAYABLE AMOUNT</h6>
+            <span class="text-secondary">RS.20</span>
+          </li>
+        </ul>
+      </div>
+      <div class="card mt-2">
+        <button class="btn payment-btn" style="width: 100%">PAY BILL</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container-fluid main-content rounded shadow-sm p-2">
+  <div class="row">
+    <div class="col-8">
+      @if(!hidePaymentPanel){
+
+      <div class="row">
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card">
+            <img cImg fluid src="assets/images/cash.png" />
+            <p class="short-cut-text">(F1)</p>
+          </div>
+        </div>
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card" (click)="fonepayClick()">
+            <img cImg fluid src="assets/images/fonepay.png" />
+            <p class="short-cut-text">(F2)</p>
+          </div>
+        </div>
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card">
+            <img cImg fluid src="assets/images/nchl.png" />
+            <p class="short-cut-text">(F3)</p>
+          </div>
+        </div>
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card">
+            <img cImg fluid src="assets/images/upi.png" />
+            <p class="short-cut-text">(F4)</p>
+          </div>
+        </div>
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card">
+            <img cImg fluid src="assets/images/visa.png" />
+            <p class="short-cut-text">(F5)</p>
+          </div>
+        </div>
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card">
+            <img cImg fluid src="assets/images/applepay.png" />
+            <p class="short-cut-text">(F6)</p>
+          </div>
+        </div>
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card">
+            <img cImg fluid src="assets/images/mastercardd.png" />
+            <p class="short-cut-text">(F7)</p>
+          </div>
+        </div>
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card">
+            <img cImg fluid src="assets/images/paypal.png" />
+            <p class="short-cut-text">(F8)</p>
+          </div>
+        </div>
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card">
+            <img
+              cImg
+              fluid
+              src="assets/images/alipayy.png"
+              style="scale: 1.5"
+            />
+            <p class="short-cut-text">(F9)</p>
+          </div>
+        </div>
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card">
+            <img
+              cImg
+              fluid
+              src="assets/images/samsungpay.png"
+              style="scale: 1.5"
+            />
+            <p class="short-cut-text">(F10)</p>
+          </div>
+        </div>
+        <div class="col-md-3 payment-card-box">
+          <div class="payment-card">
+            <img cImg fluid src="assets/images/companylogo.jpg" />
+            <p class="short-cut-text">(F1+D)</p>
+          </div>
+        </div>
+      </div>
+      } @if(showQR){
+      <div class="row">
+        <div class="card qr-code" style="align-items: center">
+          <div class="card p-2" style="width: 18rem; align-content: center">
+            <img
+              class="card-img-top"
+              src="assets/images/qrcodee.png"
+              alt="Suresh Dasari Card"
+            />
+
+            <div
+              class="qr-code-wrapper"
+              style="border-radius: 30px; background-color: #1c4059"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title text-white">FONEPAY QR</h5>
+                <p class="card-text text-light">Rs. 20.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="col-md-4 billing-details">
+      <div class="card payment-mode-account-card">
+        <div
+          class="paymentMode-line"
+          *ngFor="let line of paymentModeLine; let i = index"
+        >
+          <div class="row">
+            <div class="col">
+              {{ line.mode }}
+            </div>
+            <div class="col">Rs.{{ line.amount }}</div>
+            <div class="col text-lg-end">
+              <button class="btn btn-danger btn-sm" (click)="deleteItem(i)">
+                <i class="ri-delete-bin-3-fill"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- <tr *ngFor="let line of paymentModeLine; let i = index">
+                <td>{{ line.mode }}</td>
+                <td>{{ line.amount }}</td>
+                <td>
+                  <button class="btn btn-danger btn-sm" (click)="deleteItem(i)">
+                    <i
+                    class="ri-delete-bin-3-fill"
+                    
+                  ></i>
+                  </button>
+                  
+                 
+                </td>
+              </tr> -->
+      </div>
+      <div class="card rounded text-center billing-top-details mt-2">
+        <ul class="list-group list-group-flush billing-details-list">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <p class="mb-0 text-secondary">BILL NO</p>
+            <span class="text-secondary"> SI-PKC-0000001</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <p class="mb-0 text-secondary">BILL Date</p>
+            <span class="text-secondary"> 2024-05-30</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <p class="mb-0 text-secondary">BILL TO</p>
+            <span class="text-secondary"> PRAMESH</span>
+          </li>
+        </ul>
+      </div>
+      <div class="card mt-1">
+        <ul class="list-group list-group-flush">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <h6 class="mb-0 text-info">NET AMOUNT</h6>
+            <span class="text-info">RS.20</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <h6 class="mb-0 text-primary">GROSS AMOUNT</h6>
+            <span class="text-primary">RS.20</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <h6 class="mb-0 text-success">TOTAL AMOUNT</h6>
+            <span class="text-success">RS.20</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <h6 class="mb-0 text-danger">CHANGE AMOUNT</h6>
+            <span class="text-danger">RS.20</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <h6 class="mb-0">PAYABLE AMOUNT</h6>
+            <span class="text-secondary">RS.20</span>
+          </li>
+        </ul>
+      </div>
+      <div class="card mt-2">
+        <button class="btn payment-btn" style="width: 100%">PAY BILL</button>
+      </div>
+    </div>
+  </div>
+</div>

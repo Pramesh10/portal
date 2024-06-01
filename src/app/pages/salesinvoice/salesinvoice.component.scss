@@ -1,0 +1,115 @@
+.barcode-input {
+  line-height: 2.5;
+}
+
+.bottom-total-section {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.next-button-sectioon {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.itemLine-table {
+  height: calc(100vh - 360px);
+}
+
+.table-responsive {
+  width: fit-content; /* Set a width for the responsive wrapper */
+}
+
+table {
+  table-layout: fixed; /* Disable automatic table layout */
+  width: 100%; /* Set table width to 100% of its container */
+}
+
+th,
+td {
+  white-space: nowrap; /* Prevent wrapping of content */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Add ellipsis (...) for truncation */
+}
+
+table input {
+  width: 80%;
+  font-size: smaller;
+    line-height: initial;
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+  }
+
+/* Optionally define individual column widths (replace values) */
+th:nth-child(1),
+td:nth-child(1) {
+  width: 3%;
+} /* # SN */
+th:nth-child(2),
+td:nth-child(2) {
+  width: 11%;
+} /*Code */
+th:nth-child(3),
+td:nth-child(3) {
+  width: 16%;
+} /* Item Name */
+th:nth-child(4),
+td:nth-child(4) {
+  width: 7%;
+} /* UOM */
+th:nth-child(5),
+td:nth-child(5) {
+  width: 7%;
+} /* Rate */
+th:nth-child(6),
+td:nth-child(6) {
+  width: 7%;
+} /* Quantiy */
+th:nth-child(7),
+td:nth-child(7) {
+  width: 10%;
+} /* Gross AMt */
+th:nth-child(8),
+td:nth-child(8) {
+  width: 8%;
+} /* Discount  */
+th:nth-child(9),
+td:nth-child(9) {
+  width: 10%;
+} /* Discount % */
+th:nth-child(10),
+td:nth-child(10) {
+  width: 9%;
+} /* Net amount */
+th:nth-child(11),
+td:nth-child(11) {
+  width: 4%;
+} /* Delete */
+/* ... Define widths for other columns */
+
+
+.empty-barcode-warning{
+    color: red;
+    font-size: smaller;
+    margin-left: 2px;
+}
+
+.btn-next-to-billing{
+    width: 150px;
+    background-color: #1c4059 ;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+.table .top-row-items{
+  --bs-table-bg: none;
+  background-color: #96acbb;
+  color: azure;
+}
+

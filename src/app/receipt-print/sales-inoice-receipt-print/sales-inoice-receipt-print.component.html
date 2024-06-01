@@ -1,0 +1,108 @@
+<div id="print-section">
+  <header>
+    <div
+      id="logo"
+      class="media"
+      data-src="companylogo.jpg"
+      src="../src/assets/images/companylogo.jpg"
+    ></div>
+    <img src="../src/assets/images/companylogo" />
+  </header>
+  <div class="container text-center company-information">
+    <p style="font-weight:300; font-size: medium;">COMPANY NAME</p>
+    <p style="font-weight:lighter; font-size: xx-small;">VAT : 121212121212</p>
+    <p style="font-weight:lighter; font-size: xx-small;">NEPAL,NEPAL</p>
+  </div>
+  <table class="bill-details">
+    <tbody>
+      <tr>
+        <td>Date : <span>2023-05-30</span></td>
+        
+      </tr>
+      <tr>
+        <td>Bill TO  : <span>Pramesh K.C.</span></td>
+      </tr>
+      <tr>
+        <td>BIll NO : <span>1111111111111111111111111111111</span></td>
+      </tr>
+      <tr>
+        <td>Address : <span>2222222222222222222222222222</span></td>
+      </tr>
+      <tr>
+        <td>Customer Id: <span>3333333333333333333</span></td>
+      </tr>
+
+      <tr>
+        <th class="center-align" colspan="2">
+          <span class="receipt">Tax Invoice</span>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="items">
+    <thead>
+      <tr>
+        <th class="heading name">Item</th>
+        <th class="heading qty">Qty</th>
+        <th class="heading rate">Rate</th>
+        <th class="heading amount">Amount</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Item 1</td>
+        <td>1</td>
+        <td class="price">200.00</td>
+        <td class="price">200.00</td>
+      </tr>
+      <tr>
+        <td>Item 1 Item 1</td>
+        <td>2</td>
+        <td class="price">300.00</td>
+        <td class="price">600.00</td>
+      </tr>
+      <tr>
+        <td>Item 1</td>
+        <td>1</td>
+        <td class="price">800.00</td>
+        <td class="price">800.00</td>
+      </tr>
+      <tr>
+        <td>Item 1</td>
+        <td>1</td>
+        <td class="price">500.00</td>
+        <td class="price">500.00</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="sum-up line">Subtotal</td>
+        <td class="line price">12112.00</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="sum-up">CGST</td>
+        <td class="price">10.00</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="sum-up">SGST</td>
+        <td class="price">10.00</td>
+      </tr>
+      <tr>
+        <th colspan="3" class="total text">Total</th>
+        <th class="total price">12132.00</th>
+      </tr>
+    </tbody>
+  </table>
+  <section>
+    <p>Paid by : <span>CASH</span></p>
+    <p style="text-align: center">Thank you for your visit!</p>
+  </section>
+  <footer style="text-align: center">
+    <p>Pramesh KC TESTSTT</p>
+    <p>www.pramesh.com</p>
+  </footer>
+</div>
+
+<div class="container-fluid">
+  <button class="btn btn-primary" (click)="Print()">Print</button>
+</div>

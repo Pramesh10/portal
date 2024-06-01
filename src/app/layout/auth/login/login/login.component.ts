@@ -42,15 +42,12 @@ export class LoginComponent implements OnInit {
     console.log(this.form);
     console.log('loginclicked');
 
-    
-    this.router.navigateByUrl('/test');
+    this.router.navigateByUrl('/dashboard');
 
-
-    
   }
 
   loginWithBiometrics() {
-    this.router.navigateByUrl('/test');
+    this.router.navigateByUrl('/dashboard');
 
     console.log("loginwithBiometrics");
     // this.userLoginServices.performBiometricVerificatin();
