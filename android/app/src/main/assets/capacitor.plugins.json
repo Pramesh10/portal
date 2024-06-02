@@ -1,0 +1,7 @@
+{
+    "appId": "com.pkportal.app",
+    "appName": "pkportal",
+    "web": {
+      "index": "dist/browser/index.html"
+    }
+}
