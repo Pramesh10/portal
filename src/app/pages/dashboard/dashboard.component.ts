@@ -8,12 +8,9 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   imports: [RouterLink],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
-  providers:[]
+  providers: [],
 })
-
-
 export class DashboardComponent implements OnInit {
-
   router = inject(Router);
 
   //Keypress events add on the pages
@@ -41,5 +38,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     
   }
- 
+
+  ////Charts
 }

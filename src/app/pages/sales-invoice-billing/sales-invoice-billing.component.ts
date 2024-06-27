@@ -1,12 +1,12 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sales-invoice-billing',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,NgOptimizedImage],
   templateUrl: './sales-invoice-billing.component.html',
   styleUrl: './sales-invoice-billing.component.scss',
   animations: [
@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 export class SalesInvoiceBillingComponent implements OnInit {
   showQR: boolean = false;
   hidePaymentPanel: boolean = false;
+  changeAmount: number;
 
   paymentModeLine: PaymentModeAccount[] = [
     {
@@ -88,6 +89,7 @@ export class SalesInvoiceBillingComponent implements OnInit {
   fonepayClick() {
     this.showQR = true;
     this.hidePaymentPanel = true;
+    this.changeAmount = 0;
   }
 }
 

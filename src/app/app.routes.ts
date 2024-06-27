@@ -18,10 +18,12 @@ export const routes: Routes = [
     component:LoginComponent
   },
   {
-    path: '',
+    path:'',
     loadChildren: () =>
       import('./layout/admin/main-layout/main-layout.module').then(
         (m) => m.MainLayoutModule
       ),
   },
+
+ 
 ];

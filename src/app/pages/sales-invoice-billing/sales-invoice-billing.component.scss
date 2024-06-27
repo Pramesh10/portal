@@ -11,6 +11,8 @@
 .payment-btn {
   background-color: #1c4059;
   color: white;
+  transition: transform 0.3s ease;
+
 }
 
 .f-left {
@@ -42,7 +44,7 @@
 }
 
 .payment-card img {
-  max-width: 100%;
+  max-width: 85px;
   height: 55px;
   mix-blend-mode: multiply;
 }
@@ -95,4 +97,42 @@
   color: #1c4059;
   font-weight: bold;
   height: calc(100vh - 105px);
+}
+
+.paymentMode-line-header{
+  background-color: #ffffff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.2rem;
+  color: #1c4059;
+  font-weight: bold;
+}
+
+.payment-disabled-btn{
+  transition: transform 0.3s ease;
+  background-color: #eceff1;
+  color: rgb(26, 25, 41);
+  border-color: white;
+}
+
+.text-payable-amount{
+  color: rgb(38, 142, 38);
+}
+
+.text-change-amount{
+  color:rgb(185, 34, 34)
+}
+
+.text-total-amount{
+  color:rgb(0, 0, 0)
+}
+.text-net-amount{
+  color:rgb(50, 142, 162)
+}
+.text-gross-amount{
+  color:rgb(255, 158, 39)
 }

@@ -1,0 +1,71 @@
+.savechanges {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+$company-color: #1c4059;
+
+.btn-primary {
+  background-color: $company-color;
+  border: none;
+}
+
+.form-field-wrapper {
+  border: rgba(0, 0, 0, 0.12) 1px solid;
+  border-radius: 5px;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.form-field-wrapper.with-hover-transition {
+  transition: border-color ease-in 0.1s;
+}
+
+.form-field-wrapper.with-hover-transition:hover {
+  border-color: black;
+  border-width: 2px;
+  margin: -1px;
+}
+
+.form-field-wrapper::after {
+  content: "Setup Number Series";
+  position: absolute;
+  left: 2%;
+  top: -1.2rem;
+  padding: 0.5em;
+  background-color: #f8f9fe;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+:host ::ng-deep .p-datepicker {
+  transform: scale(0.7); /* Adjust the scale to your desired value */
+}
+
+.form-group {
+  position: relative;
+  margin-top: 28px;
+}
+
+.form-control-placeholder {
+  position: absolute;
+  top: 0;
+  padding: 7px 0 0 13px;
+  transition: all 200ms;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.form-control:focus + .form-control-placeholder,
+// .form-control:valid + .form-control-placeholder,
+.form-control:not(:placeholder-shown) + .form-control-placeholder
+ {
+  font-size: 100%;
+  transform: translate3d(0, -110%, 0);
+  opacity: 1;
+}

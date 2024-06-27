@@ -160,49 +160,49 @@
       <div class="row">
         <div class="col-md-3 payment-card-box">
           <div class="payment-card">
-            <img cImg fluid src="assets/images/cash.png" />
+            <img cImg fluid ngSrc="assets/images/cash.png" width="100" height="100" alt="payment-logo" />
             <p class="short-cut-text">(F1)</p>
           </div>
         </div>
         <div class="col-md-3 payment-card-box">
           <div class="payment-card" (click)="fonepayClick()">
-            <img cImg fluid src="assets/images/fonepay.png" />
+            <img cImg fluid src="assets/images/fonepay.png" alt="payment-logo" />
             <p class="short-cut-text">(F2)</p>
           </div>
         </div>
         <div class="col-md-3 payment-card-box">
           <div class="payment-card">
-            <img cImg fluid src="assets/images/nchl.png" />
+            <img cImg fluid src="assets/images/nchl.png" alt="payment-logo" />
             <p class="short-cut-text">(F3)</p>
           </div>
         </div>
         <div class="col-md-3 payment-card-box">
           <div class="payment-card">
-            <img cImg fluid src="assets/images/upi.png" />
+            <img cImg fluid src="assets/images/upi.png" alt="payment-logo" />
             <p class="short-cut-text">(F4)</p>
           </div>
         </div>
         <div class="col-md-3 payment-card-box">
           <div class="payment-card">
-            <img cImg fluid src="assets/images/visa.png" />
+            <img cImg fluid src="assets/images/visa.png" alt="payment-logo" />
             <p class="short-cut-text">(F5)</p>
           </div>
         </div>
         <div class="col-md-3 payment-card-box">
           <div class="payment-card">
-            <img cImg fluid src="assets/images/applepay.png" />
+            <img cImg fluid src="assets/images/applepay.png" alt="payment-logo" />
             <p class="short-cut-text">(F6)</p>
           </div>
         </div>
         <div class="col-md-3 payment-card-box">
           <div class="payment-card">
-            <img cImg fluid src="assets/images/mastercardd.png" />
+            <img cImg fluid src="assets/images/mastercardd.png" alt="payment-logo"/>
             <p class="short-cut-text">(F7)</p>
           </div>
         </div>
         <div class="col-md-3 payment-card-box">
           <div class="payment-card">
-            <img cImg fluid src="assets/images/paypal.png" />
+            <img cImg fluid src="assets/images/paypal.png" alt="payment-logo" />
             <p class="short-cut-text">(F8)</p>
           </div>
         </div>
@@ -213,6 +213,7 @@
               fluid
               src="assets/images/alipayy.png"
               style="scale: 1.5"
+              alt="payment-logo"
             />
             <p class="short-cut-text">(F9)</p>
           </div>
@@ -224,13 +225,14 @@
               fluid
               src="assets/images/samsungpay.png"
               style="scale: 1.5"
+              alt="payment-logo"
             />
             <p class="short-cut-text">(F10)</p>
           </div>
         </div>
         <div class="col-md-3 payment-card-box">
           <div class="payment-card">
-            <img cImg fluid src="assets/images/companylogo.jpg" />
+            <img cImg fluid src="assets/images/companylogo.jpg" alt="payment-logo" />
             <p class="short-cut-text">(F1+D)</p>
           </div>
         </div>
@@ -261,6 +263,13 @@
     </div>
     <div class="col-md-4 billing-details">
       <div class="card payment-mode-account-card">
+        <div class="paymentMode-line-header">
+          <div class="row">
+            <div class="col">Mode</div>
+            <div class="col">Amount</div>
+            <div class="col text-lg-end"></div>
+          </div>
+        </div>
         <div
           class="paymentMode-line"
           *ngFor="let line of paymentModeLine; let i = index"
@@ -319,37 +328,37 @@
           <li
             class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
           >
-            <h6 class="mb-0 text-info">NET AMOUNT</h6>
-            <span class="text-info">RS.20</span>
+            <h6 class="mb-0 text-net-amount">NET AMOUNT</h6>
+            <span class="text-net-amount">RS.20</span>
           </li>
           <li
             class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
           >
-            <h6 class="mb-0 text-primary">GROSS AMOUNT</h6>
-            <span class="text-primary">RS.20</span>
+            <h6 class="mb-0 text-gross-amount">GROSS AMOUNT</h6>
+            <span class="text-gross-amount">RS.20</span>
           </li>
           <li
             class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
           >
-            <h6 class="mb-0 text-success">TOTAL AMOUNT</h6>
-            <span class="text-success">RS.20</span>
+            <h6 class="mb-0 text-total-amount">TOTAL AMOUNT</h6>
+            <span class="text-total-amount">RS.20</span>
           </li>
           <li
             class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
           >
-            <h6 class="mb-0 text-danger">CHANGE AMOUNT</h6>
-            <span class="text-danger">RS.20</span>
+            <h6 class="mb-0 text-change-amount">CHANGE AMOUNT</h6>
+            <span class="text-change-amount">RS.20</span>
           </li>
           <li
             class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
           >
-            <h6 class="mb-0">PAYABLE AMOUNT</h6>
-            <span class="text-secondary">RS.20</span>
+            <h6 class="mb-0 text-payable-amount">PAYABLE AMOUNT</h6>
+            <span class="text-payable-amount">RS.20</span>
           </li>
         </ul>
       </div>
       <div class="card mt-2">
-        <button class="btn payment-btn" style="width: 100%">PAY BILL</button>
+        <button class="btn payment-btn" style="width: 100%" [ngClass]="{'payment-disabled-btn': changeAmount !== 0}"  [disabled]="changeAmount !== 0">PAY BILL</button>
       </div>
     </div>
   </div>

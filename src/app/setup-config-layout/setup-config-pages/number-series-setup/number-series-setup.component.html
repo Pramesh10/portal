@@ -1,0 +1,119 @@
+<div class="container-fluid main-content rounded shadow-sm p-2">
+  <div class="row text-center">
+    <h2>Setup Number Series</h2>
+  </div>
+  <div class="row form-field-wrapper mt-2">
+    <form (submit)="onCreateNumberSeries()" >
+      <div class="row mt-2">
+        <div class="col-lg-6 col-sm-12">
+          <!--Code-->
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="code"
+              placeholder=""
+              name="code"
+            />
+            <label class="form-control-placeholder" for="code">Code</label>
+            <small class="form-text text-muted">Enter the Code for the Number Series.</small>
+
+          </div>
+        </div>
+        <!--Description-->
+
+        <div class="col-lg-6 col-sm-12">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              placeholder=""
+              name="description"
+            />
+            <label class="form-control-placeholder" for="description" >Description</label>
+            <small class="form-text text-muted">Enter the Description for the Number Series..</small>
+
+
+          </div>
+         
+        </div>
+        <!--Starting Date-->
+
+        <!-- <div class="col-lg-6 col-sm-12">
+          <div class="form-group">
+            <label for="startingDate">Starting Date</label>
+            <input
+              type="text"
+              placeholder="Datepicker"
+              class="form-control"
+              bsDatepicker
+            />
+          </div>
+        </div> -->
+        <!--Starting Number-->
+
+        <!-- <div class="col-lg-6 col-sm-12 mt-4">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="startingNumber"
+              placeholder=""
+              name="startingNumber"
+            />
+            <label class="form-control-placeholder" for="startingNumber">Starting Number</label>
+
+          </div>
+        </div> -->
+        <!--Ending Number-->
+
+        <!-- <div class="col-lg-6 col-sm-12">
+          <div class="form-group">
+            <label for="endingNumber">Ending Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="endingNumber"
+              placeholder="  Ending Number"
+              name="endingNumber"
+            />
+          </div>
+        </div> -->
+        <!--Last Number Used-->
+
+        <!-- <div class="col-lg-6 col-sm-12">
+          <div class="form-group">
+            <label for="lastNumberUsed">Last Number Used</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastNumberUsed"
+              placeholder="  Last Number Used"
+              name="lastNumberUsed"
+            />
+          </div>
+        </div> -->
+        <!--Series Code-->
+
+        <!-- <div class="col-lg-6 col-sm-12">
+          <div class="form-group">
+            <label for="seriesCode">Series Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="seriesCode"
+              placeholder="  Series Code"
+              name="seriesCode"
+            />
+          </div>
+        </div> -->
+      </div>
+
+      <!-- Save changes button-->
+      <div class="savechanges flex-end mt-3">
+        <button class="btn btn-primary" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

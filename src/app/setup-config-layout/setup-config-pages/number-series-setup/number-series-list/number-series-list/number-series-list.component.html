@@ -1,0 +1,35 @@
+<div class="container-fluid main-content rounded shadow-sm p-2">
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary" type="submit">New</button>
+    </div>
+  </div>
+
+  <div class="row form-field-wrapper mt-4">
+    <div class="table-responsive numberSeriesLine-table">
+      <table class="table table-hover">
+        <thead>
+          <tr class="text-left">
+            <th>Code</th>
+            <th>Description</th>
+            <th>Starting No</th>
+            <th>Ending No</th>
+            <th>Last Date Used</th>
+            <th>Last No Used</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr *ngFor="let line of itemsLine.slice().reverse(); let i = index"> -->
+          <tr *ngFor="let line of numberSeriesLine; let i = index">
+            <td>{{ numberSeriesLine.length - i }}</td>
+            <!-- <td>{{ i  }}</td> -->
+            <td>{{ line.barCode }}</td>
+            <td>{{ line.itemName }}</td>
+            <td>{{ line.uom }}</td>
+            <td>{{ line.rate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
