@@ -24,13 +24,13 @@ const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-       {
-    path: 'setup',
-    loadChildren: () =>
-      import('../../../setup-config-layout/setup-config/setup-config/setup-config.module').then(
-        (m) => m.SetupConfigModule
-      ),
-  },
+      {
+        path: 'setup',
+        loadChildren: () =>
+          import(
+            '../../../setup-config-layout/setup-config/setup-config/setup-config.module'
+          ).then((m) => m.SetupConfigModule),
+      },
       {
         path: '',
         redirectTo: '/test',
